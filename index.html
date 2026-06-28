@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第四冊第八課：建築界的長頸鹿 - 國語互動教學網站</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f0f9ff;
+        }
+        /* Custom scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Shake animation for building */
+        @keyframes swayNoDamper {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+        @keyframes swayWithDamper {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-1.5deg); }
+            75% { transform: rotate(1.5deg); }
+        }
+        @keyframes damperCounter {
+            0%, 100% { transform: translate(-50%, -50%) translateX(0px); }
+            25% { transform: translate(-50%, -50%) translateX(15px); }
+            75% { transform: translate(-50%, -50%) translateX(-15px); }
+        }
+        .sway-no-damper {
+            animation: swayNoDamper 2.5s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+        .sway-with-damper {
+            animation: swayWithDamper 2.5s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+        .damper-move {
+            animation: damperCounter 2.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased">
+
+    <!-- Top Navigation Sticky Bar -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-md border-b border-sky-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🦒</span>
+                    <span class="font-black text-xl text-sky-700 tracking-wider">建築界的長頸鹿</span>
+                    <span class="bg-sky-100 text-sky-800 text-xs font-bold px-2 py-0.5 rounded-full hidden sm:inline-block">四上第八課</span>
+                </div>
+                <div class="flex space-x-1 sm:space-x-3 overflow-x-auto">
+                    <a href="#vocab" class="text-slate-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">字詞奠基</a>
+                    <a href="#sentence" class="text-slate-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">句子練兵</a>
+                    <a href="#structure" class="text-slate-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">篇章拆解</a>
+                    <a href="#writing" class="bg-sky-600 hover:bg-sky-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-colors shadow">筆耕實戰</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="relative bg-gradient-to-b from-sky-400 via-sky-300 to-sky-50 overflow-hidden py-16 px-4">
+        <!-- Background SVG clouds -->
+        <div class="absolute inset-0 opacity-20">
+            <svg class="absolute top-10 left-10 w-48 h-12 text-white fill-current" viewBox="0 0 100 30"><path d="M10 20C15 20 20 15 25 15C30 15 35 20 40 20C45 20 50 15 55 15C60 15 65 20 70 20C75 20 80 15 85 15C90 15 95 20 100 20V30H0V20C5 20 10 20 10 20Z"/></svg>
+            <svg class="absolute top-32 right-12 w-64 h-16 text-white fill-current" viewBox="0 0 100 30"><path d="M10 20C15 20 20 15 25 15C30 15 35 20 40 20C45 20 50 15 55 15C60 15 65 20 70 20C75 20 80 15 85 15C90 15 95 20 100 20V30H0V20C5 20 10 20 10 20Z"/></svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/80 rounded-full text-xs font-bold text-sky-800 shadow-sm mb-4">
+                <span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                SDG 11 永續城市與社區聯結主題
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-black text-sky-900 tracking-tight leading-none mb-4">
+                第八課：建築界的長頸鹿
+            </h1>
+            <p class="text-lg sm:text-xl text-sky-900/80 font-medium max-w-2xl mx-auto mb-6">
+                歡迎來到高樓建築的異想世界！在這裡，高大「居高臨下」的大樓變成了長頸鹿。讓我們由字詞出發，攻克句型、解析結構，最後動筆寫出你自己的建築異想吧！
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#vocab" class="bg-white hover:bg-slate-100 text-sky-700 font-bold px-6 py-3 rounded-xl shadow-md transition-transform transform hover:-translate-y-0.5">
+                    開始學習 🚀
+                </a>
+                <button onclick="openOverviewModal()" class="bg-sky-800/20 hover:bg-sky-800/30 text-sky-900 font-bold px-6 py-3 rounded-xl transition-colors">
+                    課文分析 📄
+                </button>
+            </div>
+        </div>
+
+        <!-- Wave divider -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" class="w-full h-12 text-sky-50 fill-current"><path d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path></svg>
+        </div>
+    </header>
+
+    <!-- Floating Toast Message Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 pointer-events-none flex flex-col gap-2"></div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- 1. 字詞奠基 Section -->
+        <section id="vocab" class="scroll-mt-20">
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold text-sky-600 tracking-wider uppercase">階梯第一步</span>
+                <h2 class="text-3xl font-black text-slate-800 mt-1 flex items-center justify-center gap-2">
+                    <span>🧱</span> 字詞奠基：形音義大挑戰
+                </h2>
+                <p class="text-slate-500 mt-2">精選本課核心字詞，透過互動遊戲，穩健打底！</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Card A: 形近字辨析 (塔 vs 搭) -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-amber-100 text-amber-700 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg">形</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-800">形近字辨析</h3>
+                            <p class="text-xs text-slate-400">塔（土部）vs 搭（手部）</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-50 p-3 rounded-2xl flex justify-around text-center">
+                            <div>
+                                <span class="text-3xl font-black text-sky-700">塔</span>
+                                <span class="text-xs block text-slate-400">土部 (建築物)</span>
+                            </div>
+                            <div class="border-l border-slate-200"></div>
+                            <div>
+                                <span class="text-3xl font-black text-emerald-700">搭</span>
+                                <span class="text-xs block text-slate-400">手部 (動作)</span>
+                            </div>
+                        </div>
+                        <div class="bg-sky-50/50 p-4 rounded-2xl border border-sky-100/50">
+                            <p class="text-sm font-semibold text-slate-700 mb-2">💡 填空大挑戰：</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                                雄偉的金字<span class="bg-amber-100 text-amber-900 px-2 py-0.5 font-bold rounded">？</span>是如何<span class="bg-emerald-100 text-emerald-900 px-2 py-0.5 font-bold rounded">？</span>建的，至今仍是一個謎。
+                            </p>
+                            <div class="flex gap-2">
+                                <button onclick="checkVocabQuiz('tower_fail')" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold py-2 px-3 border border-slate-200 rounded-xl transition-colors">
+                                    先搭再塔
+                                </button>
+                                <button onclick="checkVocabQuiz('tower_ok')" class="flex-1 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold py-2 px-3 rounded-xl transition-all shadow-sm">
+                                    先塔再搭 ✨
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card B: 多音字挑戰 (濟) -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-violet-100 text-violet-700 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg">音</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-800">多音字大考驗</h3>
+                            <p class="text-xs text-slate-400">「濟」的多音與用法</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between p-2 rounded-xl bg-violet-50/50 border border-violet-100/50">
+                                <span class="font-bold text-violet-800">ㄐㄧˋ (第四聲)</span>
+                                <span class="text-xs text-slate-500">經濟、同舟共濟</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2 rounded-xl bg-violet-50/50 border border-violet-100/50">
+                                <span class="font-bold text-violet-800">ㄐㄧˇ (第三聲)</span>
+                                <span class="text-xs text-slate-500">人才濟濟、濟南</span>
+                            </div>
+                        </div>
+                        <div class="bg-violet-50/30 p-3 rounded-2xl border border-dashed border-violet-200">
+                            <p class="text-xs text-slate-600 font-medium mb-2">📌 班級接力造句選一選：</p>
+                            <p class="text-sm font-semibold text-slate-700">「我們班人才 <span class="text-violet-600">濟濟(？)</span>，參加比賽成果非凡。」這裡該讀？</p>
+                            <div class="grid grid-cols-2 gap-2 mt-2">
+                                <button onclick="checkPronounce('ji4')" class="bg-white hover:bg-slate-50 text-slate-700 text-xs py-2 rounded-xl border border-slate-200 transition-colors">ㄐㄧˋ (四聲)</button>
+                                <button onclick="checkPronounce('ji3')" class="bg-violet-600 hover:bg-violet-700 text-white text-xs py-2 rounded-xl transition-all font-bold">ㄐㄧˇ (三聲) 🎯</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card C: 多義詞分析 (建築) -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-teal-100 text-teal-700 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg">義</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-800">多義詞理解</h3>
+                            <p class="text-xs text-slate-400">「建築」是名詞還是動詞？</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="p-2.5 rounded-xl bg-teal-50 border border-teal-100 text-xs text-teal-800">
+                            <strong class="block mb-0.5">名詞：構造物</strong>
+                            例：這些「建築」有重要的功能。
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-teal-50 border border-teal-100 text-xs text-teal-800">
+                            <strong class="block mb-0.5">動詞：建造 / 興建</strong>
+                            例：為了「建築」這棟新的大樓...
+                        </div>
+                        <div class="pt-2 border-t border-slate-100">
+                            <p class="text-xs font-semibold text-slate-600 mb-1">🔍 句子理解判斷：</p>
+                            <p class="text-xs text-slate-500 italic mb-2">「在這條河上，建築一座橋梁是很浩大的工程。」</p>
+                            <div class="flex gap-2">
+                                <button onclick="checkMeaning('noun')" class="flex-1 bg-white hover:bg-slate-50 text-slate-700 text-xs py-1.5 rounded-lg border border-slate-200">名詞 (構造物)</button>
+                                <button onclick="checkMeaning('verb')" class="flex-1 bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold py-1.5 rounded-lg transition-all">動詞 (建造) 🛠️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 句子練兵 Section -->
+        <section id="sentence" class="scroll-mt-20">
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold text-sky-600 tracking-wider uppercase">階梯第二步</span>
+                <h2 class="text-3xl font-black text-slate-800 mt-1 flex items-center justify-center gap-2">
+                    <span>✍️</span> 句子練兵：句型修辭引導
+                </h2>
+                <p class="text-slate-500 mt-2">深入剖析課文核心複句，提供鷹架，點擊拼裝句子！</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- A: 假設複句 & 遞進複句 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-4">
+                            <span class="text-sky-500">📎</span> 複句公式與組裝
+                        </h3>
+                        
+                        <!-- 句型1 -->
+                        <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="bg-sky-100 text-sky-800 font-bold px-2.5 py-1 rounded-lg text-xs">假設複句</span>
+                                <span class="text-xs text-slate-400">假如……就……</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mb-3">前半句提出假設的情況，後半句描述假設實現時的結果。</p>
+                            <!-- Phrase Builder -->
+                            <div class="bg-white p-3 rounded-xl border border-slate-200/60 mb-2">
+                                <div class="flex flex-wrap gap-2" id="drag-container-hypo">
+                                    <span onclick="togglePhrase('hypo', this)" class="bg-slate-100 hover:bg-sky-100 cursor-pointer px-2.5 py-1 rounded-lg text-xs transition-colors font-medium text-slate-700">假如讓我重新安排行程</span>
+                                    <span onclick="togglePhrase('hypo', this)" class="bg-slate-100 hover:bg-sky-100 cursor-pointer px-2.5 py-1 rounded-lg text-xs transition-colors font-medium text-slate-700">我一定會</span>
+                                    <span onclick="togglePhrase('hypo', this)" class="bg-slate-100 hover:bg-sky-100 cursor-pointer px-2.5 py-1 rounded-lg text-xs transition-colors font-medium text-slate-700">讓大家更滿意</span>
+                                    <span onclick="togglePhrase('hypo', this)" class="bg-slate-100 hover:bg-sky-100 cursor-pointer px-2.5 py-1 rounded-lg text-xs transition-colors font-medium text-slate-700">如果不好好練習</span>
+                                    <span onclick="togglePhrase('hypo', this)" class="bg-slate-100 hover:bg-sky-100 cursor-pointer px-2.5 py-1 rounded-lg text-xs transition-colors font-medium text-slate-700">就不會進步</span>
+                                </div>
+                            </div>
+                            <div class="text-xs text-slate-500">
+                                <strong>已組合句子：</strong>
+                                <span id="compiled-hypo" class="text-sky-700 font-bold">點選上方字卡組合...</span>
+                            </div>
+                        </div>
+
+                        <!-- 句型2 -->
+                        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="bg-emerald-100 text-emerald-800 font-bold px-2.5 py-1 rounded-lg text-xs">遞進複句</span>
+                                <span class="text-xs text-slate-400">不但……更……</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mb-3">後面的意思比前面的意思更進一層（範圍、程度或時間）。</p>
+                            <!-- Phrase Builder -->
+                            <div class="bg-white p-3 rounded-xl border border-slate-200/60 mb-2">
+                                <div class="flex flex-wrap gap-2" id="drag-container-progress">
+                                    <span onclick="togglePhrase('prog', this)" class="bg-slate-100 hover:bg-emerald-100 cursor-pointer px-2.5 py-1 rounded-lg text-xs transition-colors font-medium text-slate-700">這本書不但內容精采</span>
+                                    <span onclick="togglePhrase('prog', this)" class="bg-slate-100 hover:bg-emerald-100 cursor-pointer px-2.5 py-1 rounded-lg text-xs transition-colors font-medium text-slate-700">更提供許多實用的知識</span>
+                                    <span onclick="togglePhrase('prog', this)" class="bg-slate-100 hover:bg-emerald-100 cursor-pointer px-2.5 py-1 rounded-lg text-xs transition-colors font-medium text-slate-700">台北101大樓不但高大</span>
+                                    <span onclick="togglePhrase('prog', this)" class="bg-slate-100 hover:bg-emerald-100 cursor-pointer px-2.5 py-1 rounded-lg text-xs transition-colors font-medium text-slate-700">更代表現代科技的結晶</span>
+                                </div>
+                            </div>
+                            <div class="text-xs text-slate-500">
+                                <strong>已組合句子：</strong>
+                                <span id="compiled-prog" class="text-emerald-700 font-bold">點選上方字卡組合...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex gap-2">
+                        <button onclick="clearCompiledSentences()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-2 px-4 rounded-xl text-xs transition-colors">全部清除</button>
+                        <button onclick="submitSentences()" class="flex-1 bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-xl text-xs transition-colors shadow">驗證組合 ✨</button>
+                    </div>
+                </div>
+
+                <!-- B: 摹寫修辭探究 (東京晴空塔的視覺摹寫 & 台北101阻尼器實驗) -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-100">
+                    <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-4">
+                        <span class="text-amber-500">💡</span> 課文科學大觀園：台北101阻尼器實驗
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-4">
+                        課文中提到：「大樓裡面安裝了一座<strong>阻尼器</strong>，使它能避免地震與強風所造成的搖晃。」讓我們親自來測試阻尼器的厲害吧！
+                    </p>
+
+                    <!-- Damper Simulator UI -->
+                    <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 flex flex-col sm:flex-row items-center gap-6">
+                        <!-- Left: Simulation Canvas -->
+                        <div class="w-full sm:w-1/2 h-64 bg-sky-100/50 rounded-xl relative overflow-hidden border border-sky-100 flex flex-col justify-end items-center">
+                            
+                            <!-- Sky details -->
+                            <div class="absolute top-4 left-4 text-[10px] text-sky-600 font-bold uppercase tracking-widest">強風地震模擬中</div>
+                            <div class="absolute top-12 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white/70 px-2 py-0.5 rounded text-[10px] font-bold text-slate-500">
+                                <span>阻尼器狀態：</span>
+                                <span id="damper-status-label" class="text-red-600">已關閉</span>
+                            </div>
+
+                            <!-- Sky clouds decoration -->
+                            <div class="absolute top-8 left-2 text-xl opacity-30">☁️</div>
+                            <div class="absolute top-16 right-4 text-xl opacity-30">☁️</div>
+
+                            <!-- The Building Container -->
+                            <div id="building" class="w-16 h-48 bg-sky-800 rounded-t-md relative flex flex-col items-center justify-between py-4 border-t-4 border-amber-400">
+                                <!-- Windows inside building -->
+                                <div class="grid grid-cols-2 gap-1 w-10">
+                                    <div class="w-4 h-3 bg-yellow-200 rounded-sm opacity-80"></div>
+                                    <div class="w-4 h-3 bg-yellow-200 rounded-sm opacity-80"></div>
+                                    <div class="w-4 h-3 bg-yellow-200 rounded-sm opacity-30"></div>
+                                    <div class="w-4 h-3 bg-yellow-200 rounded-sm opacity-80"></div>
+                                    <div class="w-4 h-3 bg-yellow-200 rounded-sm opacity-80"></div>
+                                    <div class="w-4 h-3 bg-yellow-200 rounded-sm opacity-30"></div>
+                                </div>
+
+                                <!-- Tuned Mass Damper Sphere (Golden ball) -->
+                                <div id="damper-ball" class="w-6 h-6 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full border border-yellow-300 shadow absolute top-2 left-1/2 -translate-x-1/2 z-10 transition-transform flex items-center justify-center">
+                                    <span class="text-[8px] text-white font-black">TMD</span>
+                                </div>
+
+                                <!-- Structural Bamboo node effect -->
+                                <div class="w-full h-1.5 bg-sky-900 absolute top-1/3"></div>
+                                <div class="w-full h-1.5 bg-sky-900 absolute top-2/3"></div>
+                            </div>
+
+                            <!-- Ground -->
+                            <div class="w-full h-4 bg-slate-400 z-10"></div>
+                        </div>
+
+                        <!-- Right: Interactive Controls -->
+                        <div class="w-full sm:w-1/2 space-y-4">
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-800 mb-1">實驗操控面板</h4>
+                                <p class="text-xs text-slate-500">切換阻尼器(Tuned Mass Damper)，觀察高樓頂端振幅的差別。</p>
+                            </div>
+
+                            <div class="space-y-2">
+                                <button onclick="triggerSway(false)" class="w-full bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-2.5 px-4 rounded-xl text-xs transition-all flex items-center justify-between">
+                                    <span>🌪️ 模擬強風 (阻尼器 OFF)</span>
+                                    <span class="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-black">晃動大</span>
+                                </button>
+                                <button onclick="triggerSway(true)" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition-all flex items-center justify-between shadow shadow-emerald-200">
+                                    <span>🛡️ 模擬強風 (阻尼器 ON)</span>
+                                    <span class="bg-emerald-800 text-white text-[10px] px-1.5 py-0.5 rounded font-black">超穩定</span>
+                                </button>
+                            </div>
+
+                            <div class="bg-amber-50 border border-amber-100 p-3 rounded-xl text-xs text-amber-900 leading-relaxed">
+                                <strong>💡 國語科小聯想：</strong><br>
+                                東京晴空塔則利用「底部三角形、頂端圓形」的幾何形狀，來減少強風的風阻呢！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 篇章拆解 Section -->
+        <section id="structure" class="scroll-mt-20">
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold text-sky-600 tracking-wider uppercase">階梯第三步</span>
+                <h2 class="text-3xl font-black text-slate-800 mt-1 flex items-center justify-center gap-2">
+                    <span>🗺️</span> 篇章拆解：說明文結構心智圖
+                </h2>
+                <p class="text-slate-500 mt-2">點擊解鎖各個段落的功能與特色，掌握說明文經典「總-分-總」結構！</p>
+            </div>
+
+            <!-- Main Structure Area -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-100">
+                <!-- Structure Flowchart -->
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 items-stretch">
+                    
+                    <!-- 1. 總說 -->
+                    <div class="lg:col-span-1 bg-gradient-to-br from-sky-50 to-sky-100/50 p-5 rounded-2xl border border-sky-100 flex flex-col justify-between">
+                        <div>
+                            <div class="inline-block bg-sky-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full mb-2">一、總說</div>
+                            <h4 class="font-bold text-slate-800 text-base mb-1">引出主旨</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                將「居高臨下」的大樓比擬為「長頸鹿」，指出它們不但有重要功能特色，更成為城市景觀。
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-sky-200/60 text-xs font-semibold text-sky-700 flex items-center gap-1">
+                            <span>🔍 課文第1段</span>
+                        </div>
+                    </div>
+
+                    <!-- Arrow icon on desktop / Down on mobile -->
+                    <div class="flex items-center justify-center text-slate-300 py-2 lg:py-0">
+                        <i class="fa-solid fa-chevron-right text-xl hidden lg:block"></i>
+                        <i class="fa-solid fa-chevron-down text-xl lg:hidden"></i>
+                    </div>
+
+                    <!-- 2. 分說 (3 Target Buildings) -->
+                    <div class="lg:col-span-1 bg-gradient-to-br from-amber-50/50 to-amber-100/30 p-5 rounded-2xl border border-amber-100 flex flex-col justify-between">
+                        <div>
+                            <div class="inline-block bg-amber-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full mb-2">二、分說 (1)</div>
+                            <h4 class="font-bold text-slate-800 text-base mb-1">台北一〇一</h4>
+                            <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 mt-2">
+                                <li>外觀：有如一節一節竹子</li>
+                                <li>特色：巨大古錢圖案、黃金阻尼器</li>
+                                <li>功能：金融中心、跨年煙火秀</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-amber-200/60 text-xs font-semibold text-amber-700 flex items-center gap-1">
+                            <span>🔍 課文第2段</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. 分說 (2) -->
+                    <div class="lg:col-span-1 bg-gradient-to-br from-emerald-50/50 to-emerald-100/30 p-5 rounded-2xl border border-emerald-100 flex flex-col justify-between">
+                        <div>
+                            <div class="inline-block bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full mb-2">二、分說 (2)</div>
+                            <h4 class="font-bold text-slate-800 text-base mb-1">東京晴空塔</h4>
+                            <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 mt-2">
+                                <li>外觀：底部三角、頂端圓形</li>
+                                <li>特色：晴空塔白、散發耀眼光芒</li>
+                                <li>功能：電波通訊、都市開發商機</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-emerald-200/60 text-xs font-semibold text-emerald-700 flex items-center gap-1">
+                            <span>🔍 課文第3段</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. 分說 (3) -->
+                    <div class="lg:col-span-1 bg-gradient-to-br from-indigo-50/50 to-indigo-100/30 p-5 rounded-2xl border border-indigo-100 flex flex-col justify-between">
+                        <div>
+                            <div class="inline-block bg-indigo-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full mb-2">二、分說 (3)</div>
+                            <h4 class="font-bold text-slate-800 text-base mb-1">吉隆坡雙峰塔</h4>
+                            <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 mt-2">
+                                <li>外觀：層層八角形的雙生大樓</li>
+                                <li>特色：「人字形」連通橋</li>
+                                <li>功能：大型商場、美麗剪影</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-indigo-200/60 text-xs font-semibold text-indigo-700 flex items-center gap-1">
+                            <span>🔍 課文第4段</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. 總結 -->
+                    <div class="lg:col-span-1 bg-gradient-to-br from-rose-50 to-rose-100/50 p-5 rounded-2xl border border-rose-100 flex flex-col justify-between">
+                        <div>
+                            <div class="inline-block bg-rose-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full mb-2">三、總結</div>
+                            <h4 class="font-bold text-slate-800 text-base mb-1">展望與收尾</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                讚美這些建築界長頸鹿散發光芒、點亮城市，帶給世界各國遊客美好難忘的印象。
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-rose-200/60 text-xs font-semibold text-rose-700 flex items-center gap-1">
+                            <span>🔍 課文第5段</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Interactive Q&A for comprehension -->
+                <div class="mt-8 pt-8 border-t border-slate-100">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <span>❓</span> 課文閱讀理解大解密
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Q1 -->
+                        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                            <p class="text-xs font-black text-sky-700 mb-1">問題 1 (提取訊息)</p>
+                            <p class="text-sm font-bold text-slate-800">作者為什麼把高聳大樓說成是「長頸鹿」？</p>
+                            <details class="mt-2 text-xs text-slate-600 leading-relaxed">
+                                <summary class="cursor-pointer text-sky-600 hover:text-sky-700 font-bold focus:outline-none">點此觀看參考解答</summary>
+                                <p class="mt-2 bg-white p-3 rounded-xl border border-slate-200">
+                                    因為這些大樓「居高臨下」，身高遠遠高於一般的建築，就跟長頸鹿在動物界中身高最高的特色一樣，非常引人注目。
+                                </p>
+                            </details>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                            <p class="text-xs font-black text-sky-700 mb-1">問題 2 (推論與連結)</p>
+                            <p class="text-sm font-bold text-slate-800">哪一座大樓兼具了「傳統文化」與「現代科技」？</p>
+                            <details class="mt-2 text-xs text-slate-600 leading-relaxed">
+                                <summary class="cursor-pointer text-sky-600 hover:text-sky-700 font-bold focus:outline-none">點此觀看參考解答</summary>
+                                <p class="mt-2 bg-white p-3 rounded-xl border border-slate-200">
+                                    是<strong>台北一〇一大樓</strong>。因為它的外觀取材自東方文化中一節一節的「竹子」和「古錢幣」圖案（代表經濟節節高升與金融中心），同時它內部又安裝了抗震避風的科技結晶「阻尼器」。
+                                </p>
+                            </details>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                            <p class="text-xs font-black text-sky-700 mb-1">問題 3 (比較評估)</p>
+                            <p class="text-sm font-bold text-slate-800">根據課文，吉隆坡雙峰塔在空間功能上有何特色？</p>
+                            <details class="mt-2 text-xs text-slate-600 leading-relaxed">
+                                <summary class="cursor-pointer text-sky-600 hover:text-sky-700 font-bold focus:outline-none">點此觀看參考解答</summary>
+                                <p class="mt-2 bg-white p-3 rounded-xl border border-slate-200">
+                                    它是一座「雙生大樓」，而且在41與42層樓之間設計了長達58公尺的「人字形」連通橋，不僅是它的經典外觀，更方便人們往來。
+                                </p>
+                            </details>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                            <p class="text-xs font-black text-sky-700 mb-1">問題 4 (SDGs 永續聯結)</p>
+                            <p class="text-sm font-bold text-slate-800">高樓建築對城市的可持續性(SDG11)能帶來什麼正面影響？</p>
+                            <details class="mt-2 text-xs text-slate-600 leading-relaxed">
+                                <summary class="cursor-pointer text-sky-600 hover:text-sky-700 font-bold focus:outline-none">點此觀看參考解答</summary>
+                                <p class="mt-2 bg-white p-3 rounded-xl border border-slate-200">
+                                    高樓建築提供了高度集約的城市金融與商業中心。例如東京晴空塔周邊發展出的「都市開發計畫」，整合了交通、電波通訊與商業設施，為當地注入永續發展的商機與多元民情交流空間。
+                                </p>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 筆耕實戰 Section -->
+        <section id="writing" class="scroll-mt-20">
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold text-emerald-600 tracking-wider uppercase">階梯第四步 核心輸出</span>
+                <h2 class="text-3xl font-black text-slate-800 mt-1 flex items-center justify-center gap-2">
+                    <span>🦛</span> 筆耕實戰：「建築界的河馬」寫作引導
+                </h2>
+                <p class="text-slate-500 mt-2">根據國小語文課本「1+X」概念遷移：如果高聳大樓是「長頸鹿」，那麼寬廣、穩重的建築就是「河馬」！</p>
+            </div>
+
+            <!-- Scaffold Interface Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                
+                <!-- Left: Guide & Inputs (7 Columns) -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-extrabold px-2 py-1 rounded">寫作鷹架</span>
+                            <h3 class="text-lg font-bold text-slate-800">河馬建築特寫挑戰</h3>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-6">
+                            河馬通常給人「低矮、寬廣、穩重、肚子大、裝得多、厚實」的印象。
+                            請引導學生想一想，身邊有哪些「寬廣穩重、能容納極多人」的建築符合河馬的特色？（例如：大巨蛋、大型體育館、國家劇院、展覽館、甚至是低矮寬廣的圓形土樓、羅浮宮）。
+                        </p>
+
+                        <!-- Scaffold Steps Inputs -->
+                        <div class="space-y-4">
+                            
+                            <!-- Input 1 -->
+                            <div>
+                                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1">
+                                    1. 選擇你的「河馬建築」名稱
+                                </label>
+                                <input type="text" id="write-title" oninput="updateScaffold()" value="臺北大巨蛋" class="w-full text-sm border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-4 py-2.5 transition-colors" placeholder="例如：臺北大巨蛋、高雄展覽館、歷史博物館">
+                            </div>
+
+                            <!-- Input 2 -->
+                            <div>
+                                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1">
+                                    2. 它的外形特徵（如何符合「河馬」的寬廣敦厚？）
+                                </label>
+                                <input type="text" id="write-look" oninput="updateScaffold()" value="圓胖而扁平，圓頂覆蓋著鋼骨，看起來敦厚平穩" class="w-full text-sm border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-4 py-2.5 transition-colors" placeholder="描述外形，如：圓潤、龐大、橫跨在地面、平穩厚實...">
+                            </div>
+
+                            <!-- Input 3 -->
+                            <div>
+                                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1">
+                                    3. 它具備的「多元功能與容量」
+                                </label>
+                                <input type="text" id="write-function" oninput="updateScaffold()" value="舉辦萬人棒球賽事與大型演唱會，肚子裡能裝滿滿的觀眾" class="w-full text-sm border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-4 py-2.5 transition-colors" placeholder="描述功能，如：容納萬人、展覽交流、保護珍貴文物...">
+                            </div>
+
+                            <!-- Input 4 -->
+                            <div>
+                                <label class="block text-xs font-extrabold text-slate-700 uppercase mb-1">
+                                    4. 使用課文複句「不但……更……」進行造句
+                                </label>
+                                <textarea id="write-sentence" oninput="updateScaffold()" rows="2" class="w-full text-sm border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-4 py-2.5 transition-colors" placeholder="融入不但...更...的句子。">這座河馬不但防風防雨，更能讓數萬名熱情球迷共同吶喊，享受精彩球賽。</textarea>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Preset Options Helper -->
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-2 items-center">
+                        <span class="text-xs text-slate-400 font-bold">點選快速套用靈感：</span>
+                        <button onclick="applyScaffoldTemplate('dome')" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1.5 rounded-lg font-bold transition-all border border-emerald-100">🏟️ 臺北大巨蛋</button>
+                        <button onclick="applyScaffoldTemplate('museum')" class="bg-amber-50 hover:bg-amber-100 text-amber-800 text-xs px-2.5 py-1.5 rounded-lg font-bold transition-all border border-amber-100">🏛️ 歷史博物館</button>
+                    </div>
+                </div>
+
+                <!-- Right: Dynamic Real-time Preview Card (5 Columns) -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-6 sm:p-8 border border-emerald-100 flex flex-col justify-between shadow-inner">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-emerald-700 tracking-wider">即時作文產出區</span>
+                            <span class="text-xs text-slate-400 bg-white/80 px-2 py-0.5 rounded shadow-sm">說明文範式</span>
+                        </div>
+
+                        <!-- Real-time assembled output text structure -->
+                        <div id="assembled-paper" class="bg-white rounded-2xl p-5 shadow-sm text-sm text-slate-700 leading-relaxed space-y-4 border border-emerald-100 min-h-[300px]">
+                            <!-- Assembled content is dynamically loaded by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Toolbar & copy -->
+                    <div class="mt-6 space-y-2">
+                        <button onclick="copyToClipboard()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-sm transition-all shadow-md shadow-emerald-200 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-copy"></i>
+                            <span>複製整篇作品全文</span>
+                        </button>
+                        <p class="text-[10px] text-center text-slate-400">複製成功後，學生可直接黏貼於作業簿或課堂即時反饋平台中！</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SDG11 / Footer Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h4 class="text-white font-black text-lg mb-2 flex items-center gap-2">
+                        <span>🦒</span> 建築界的長頸鹿 - 教師專屬教學平台
+                    </h4>
+                    <p class="text-xs leading-relaxed max-w-md">
+                        本網站依據國語科課本、教學指引教材編撰設計。利用說明文的特徵引導學生深入字、詞、句、段、篇，並結合聯合國永續發展目標 SDG 11 永續城市，培養學生的國際視野與永續意識。
+                    </p>
+                </div>
+                <div class="flex flex-col md:items-end gap-3 text-xs">
+                    <span class="bg-emerald-950 text-emerald-300 font-bold px-3 py-1.5 rounded-xl border border-emerald-900 inline-block">
+                        🌿 適用版本：各大版本國小四年級上學期第八課
+                    </span>
+                    <p>© 2026 國語科教學大師互動網頁開發組. 專為課堂電子白板與學生iPad互動打造.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lesson Overview Modal Component -->
+    <div id="overview-modal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8 relative">
+            <button onclick="closeOverviewModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 focus:outline-none">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="mb-6">
+                <span class="text-xs font-bold text-sky-600">LESSON OVERVIEW</span>
+                <h3 class="text-2xl font-black text-slate-800">本課教學總覽（備課一指通）</h3>
+            </div>
+            <div class="space-y-4 text-sm text-slate-600 leading-relaxed">
+                <div class="bg-slate-50 p-4 rounded-2xl">
+                    <strong class="text-slate-800 block mb-1">🎯 課文主旨</strong>
+                    高樓建築為城市的特有景觀，不但讓該城市揚名國際，更是科技精進與文化創新的展現。
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl">
+                    <strong class="text-slate-800 block mb-1">📖 課文大意</strong>
+                    「居高臨下」的大樓是建築界的「長頸鹿」，是城市的特有景觀。課文以台北一〇一、東京晴空塔、及吉隆坡雙峰塔為例，介紹其獨特的功能與外觀特色。
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-sky-50/50 p-3 rounded-2xl border border-sky-100">
+                        <strong class="text-sky-900 block mb-1">🗣️ 重點句型</strong>
+                        1. 假如……就…… (假設)<br>
+                        2. 不但……更…… (遞進)
+                    </div>
+                    <div class="bg-emerald-50/50 p-3 rounded-2xl border border-emerald-100">
+                        <strong class="text-emerald-900 block mb-1">🎨 修辭特色</strong>
+                        1. 譬喻（建築比擬長頸鹿）<br>
+                        2. 摹寫（晴空塔色彩描繪）
+                    </div>
+                </div>
+                <div class="bg-amber-50 p-4 rounded-2xl text-xs text-amber-900">
+                    <strong>💡 「1+X」寫作拓展思考：</strong><br>
+                    課堂上，教師可引導學生思考除了高大長頸鹿大樓外，是否有矮胖、敦實且可供大型集會的「河馬型」大樓？讓學生學會將生硬的說明文特徵，透過動物譬喻化生動寫出。
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeOverviewModal()" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-5 py-2.5 rounded-xl transition-colors">
+                    關閉並開始上課！
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions Logic -->
+    <script>
+        // Global State for Building Simulation
+        let isDamperActive = false;
+
+        // Interactive States for sentence compiler
+        let selectedHypoPhrases = [];
+        let selectedProgPhrases = [];
+
+        // Dynamic scaffold writing preset configurations
+        const presets = {
+            dome: {
+                title: "臺北大巨蛋",
+                look: "圓胖而扁平，圓頂覆蓋著鋼骨，看起來敦厚平穩",
+                function: "舉辦萬人棒球賽事與大型演唱會，肚子裡能裝滿滿的觀眾",
+                sentence: "這座大巨蛋不但防風防雨，更能讓數萬名熱情球迷共同吶喊，享受精彩球賽。"
+            },
+            museum: {
+                title: "國立歷史博物館",
+                look: "有著寬廣古樸的紅牆綠瓦，像一隻巨型大河馬靜臥在都市花園旁",
+                function: "收藏數萬件珍貴的歷史文物與藝術珍寶，孕育歷史文教",
+                sentence: "這棟歷史博物館不但承載著數百年的文化靈魂，更為城市帶來寧靜的思古幽情。"
+            }
+        };
+
+        // Window load initializer
+        window.onload = function() {
+            updateScaffold();
+        };
+
+        // Custom toast helper
+        function showToast(message, type = "success") {
+            const container = document.getElementById("toast-container");
+            const toast = document.createElement("div");
+            toast.className = `transform translate-y-2 opacity-0 transition-all duration-300 px-4 py-3 rounded-xl shadow-lg text-xs font-bold text-white flex items-center gap-2 pointer-events-auto ${
+                type === "success" ? "bg-emerald-600" : type === "error" ? "bg-red-600" : "bg-sky-600"
+            }`;
+            
+            const icon = type === "success" ? "✅" : type === "error" ? "❌" : "ℹ️";
+            toast.innerHTML = `<span>${icon}</span> <span>${message}</span>`;
+            
+            container.appendChild(toast);
+            
+            // Trigger animation
+            setTimeout(() => {
+                toast.classList.remove("translate-y-2", "opacity-0");
+            }, 50);
+
+            // Hide and remove
+            setTimeout(() => {
+                toast.classList.add("translate-y-2", "opacity-0");
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Section 1: Vocab Verification Logic
+        function checkVocabQuiz(answer) {
+            if (answer === 'tower_ok') {
+                showToast("恭喜答對！我們先爬『塔』（土部：土蓋的建築物），再去『搭』車（手部：手扶動作）。", "success");
+            } else {
+                showToast("答錯囉，再想想！金字塔是土石建造的建築物（土部），搭建則是手部的動作喔！", "error");
+            }
+        }
+
+        function checkPronounce(answer) {
+            if (answer === 'ji3') {
+                showToast("答對囉！『人才濟濟』形容人才眾多，這裡的濟要讀作三聲『ㄐㄧˇ』哦！四聲『ㄐㄧˋ』主要用於經濟與救援。", "success");
+            } else {
+                showToast("不對喔，再唸唸看！『人才濟濟』是特別的多音字結構，要唸三聲『ㄐㄧˇ』唷！", "error");
+            }
+        }
+
+        function checkMeaning(answer) {
+            if (answer === 'verb') {
+                showToast("完全正確！在這句話中，『建築一座橋梁』是指『建造/興建』的動詞用法喔！好棒的觀察力！", "success");
+            } else {
+                showToast("可惜答錯了。此處『建築』後面接著『一座橋梁』，表示正在進行『建造』的動作，因此是動詞用法喔！", "error");
+            }
+        }
+
+        // Section 2: Building Damper sway logic
+        function triggerSway(damperOn) {
+            const building = document.getElementById("building");
+            const damperStatusLabel = document.getElementById("damper-status-label");
+            const damperBall = document.getElementById("damper-ball");
+
+            // Reset classes
+            building.classList.remove("sway-no-damper", "sway-with-damper");
+            damperBall.classList.remove("damper-move");
+
+            // Reflow trigger
+            void building.offsetWidth;
+
+            if (damperOn) {
+                building.classList.add("sway-with-damper");
+                damperBall.classList.add("damper-move");
+                damperStatusLabel.innerText = "已開啟 🟢";
+                damperStatusLabel.className = "text-emerald-600";
+                showToast("🛡️ 阻尼器開啟！大樓受風力震動變小，阻尼球往反方向擺動抵消動能！", "success");
+            } else {
+                building.classList.add("sway-no-damper");
+                damperStatusLabel.innerText = "已關閉 🔴";
+                damperStatusLabel.className = "text-red-600";
+                showToast("🌪️ 阻尼器未啟動！高樓頂層大幅度擺動，在強風與地震中非常危險！", "error");
+            }
+        }
+
+        // Section 2: Sentence compilers
+        function togglePhrase(type, element) {
+            const word = element.innerText;
+            if (type === 'hypo') {
+                if (selectedHypoPhrases.includes(word)) {
+                    selectedHypoPhrases = selectedHypoPhrases.filter(w => w !== word);
+                    element.classList.remove("bg-sky-200", "text-sky-900");
+                    element.classList.add("bg-slate-100", "text-slate-700");
+                } else {
+                    selectedHypoPhrases.push(word);
+                    element.classList.add("bg-sky-200", "text-sky-900");
+                }
+                const compiledSpan = document.getElementById("compiled-hypo");
+                compiledSpan.innerText = selectedHypoPhrases.length > 0 ? selectedHypoPhrases.join(" → ") : "點選上方字卡組合...";
+            } else if (type === 'prog') {
+                if (selectedProgPhrases.includes(word)) {
+                    selectedProgPhrases = selectedProgPhrases.filter(w => w !== word);
+                    element.classList.remove("bg-emerald-200", "text-emerald-900");
+                    element.classList.add("bg-slate-100", "text-slate-700");
+                } else {
+                    selectedProgPhrases.push(word);
+                    element.classList.add("bg-emerald-200", "text-emerald-900");
+                }
+                const compiledSpan = document.getElementById("compiled-prog");
+                compiledSpan.innerText = selectedProgPhrases.length > 0 ? selectedProgPhrases.join(" → ") : "點選上方字卡組合...";
+            }
+        }
+
+        function clearCompiledSentences() {
+            selectedHypoPhrases = [];
+            selectedProgPhrases = [];
+            
+            const hypoCompiled = document.getElementById("compiled-hypo");
+            const progCompiled = document.getElementById("compiled-prog");
+            hypoCompiled.innerText = "點選上方字卡組合...";
+            progCompiled.innerText = "點選上方字卡組合...";
+
+            document.querySelectorAll("#drag-container-hypo span").forEach(el => {
+                el.className = "bg-slate-100 hover:bg-sky-100 cursor-pointer px-2.5 py-1 rounded-lg text-xs transition-colors font-medium text-slate-700";
+            });
+            document.querySelectorAll("#drag-container-progress span").forEach(el => {
+                el.className = "bg-slate-100 hover:bg-emerald-100 cursor-pointer px-2.5 py-1 rounded-lg text-xs transition-colors font-medium text-slate-700";
+            });
+            showToast("已清除字卡組合", "info");
+        }
+
+        function submitSentences() {
+            let matches = 0;
+            // Validate Hypo: check if correct pairs are selected
+            const hasCorrectHypo1 = selectedHypoPhrases.includes("假如讓我重新安排行程") && selectedHypoPhrases.includes("我一定會") && selectedHypoPhrases.includes("讓大家更滿意");
+            const hasCorrectHypo2 = selectedHypoPhrases.includes("如果不好好練習") && selectedHypoPhrases.includes("就不會進步");
+            
+            // Validate Prog: Check if correct pairs are selected
+            const hasCorrectProg1 = selectedProgPhrases.includes("這本書不但內容精采") && selectedProgPhrases.includes("更提供許多實用的知識");
+            const hasCorrectProg2 = selectedProgPhrases.includes("台北101大樓不但高大") && selectedProgPhrases.includes("更代表現代科技的結晶");
+
+            if (hasCorrectHypo1 || hasCorrectHypo2) matches++;
+            if (hasCorrectProg1 || hasCorrectProg2) matches++;
+
+            if (matches === 2) {
+                showToast("太完美了！你成功組裝了假設複句與遞進複句，邏輯非常嚴密喔！✨", "success");
+            } else if (matches === 1) {
+                showToast("很棒喔！組裝完成了一組複句，繼續嘗試另一組看看吧！💡", "info");
+            } else {
+                showToast("組裝出的句子邏輯不夠通順喔！請再次確認『假設情況』與『結果』，或『不但...更...』的遞進關係！", "error");
+            }
+        }
+
+        // Section 4: Writing Scaffold Real-time Compilation
+        function updateScaffold() {
+            const title = document.getElementById("write-title").value.trim() || "我的河馬建築";
+            const look = document.getElementById("write-look").value.trim() || "寬廣平穩的外型";
+            const func = document.getElementById("write-function").value.trim() || "提供極佳的功能";
+            const sentence = document.getElementById("write-sentence").value.trim() || "具有令人難忘的特徵。";
+
+            const assembledBox = document.getElementById("assembled-paper");
+
+            // Format dynamic writing content
+            assembledBox.innerHTML = `
+                <h4 class="text-lg font-black text-slate-800 text-center mb-4">《建築界的河馬 —— ${title}》</h4>
+                <p class="text-xs leading-relaxed text-slate-600 mb-3 indent-6">
+                    如果把高聳入雲、直指天際的摩天大樓想像成居高臨下的「長頸鹿」；那麼，那些穩坐地面、寬廣雄壯的大型建築，無疑就是建築界的「河馬」了。
+                </p>
+                <p class="text-xs leading-relaxed text-slate-600 mb-3 indent-6">
+                    坐落在城市核心的<strong>${title}</strong>，正是其中的代表。從外觀來看，它${look}。這隻「大河馬」那厚實平穩的身形，在繁華喧囂的街景中，顯得格外沉穩安詳。
+                </p>
+                <p class="text-xs leading-relaxed text-slate-600 mb-3 indent-6">
+                    這座宏偉的河馬建築不僅擁有獨特的外表，更在城市中扮演著舉足輕重的角色。它能${func}。${sentence}
+                </p>
+                <p class="text-xs leading-relaxed text-slate-600 indent-6">
+                    不論是矗立雲端的「長頸鹿」，還是敦厚包容的「河馬」，這些各具特色與功能的多元建築，都點亮了整座城市，更為造訪的朋友們留下了美好而難忘的深刻印象。
+                </p>
+            `;
+        }
+
+        function applyScaffoldTemplate(key) {
+            const preset = presets[key];
+            if (preset) {
+                document.getElementById("write-title").value = preset.title;
+                document.getElementById("write-look").value = preset.look;
+                document.getElementById("write-function").value = preset.function;
+                document.getElementById("write-sentence").value = preset.sentence;
+                updateScaffold();
+                showToast(`已套用範本：${preset.title}！`, "success");
+            }
+        }
+
+        function copyToClipboard() {
+            // Helper function for copy using dynamic textarea
+            const assembledText = document.getElementById("assembled-paper").innerText;
+            const textarea = document.createElement("textarea");
+            textarea.value = assembledText;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast("📋 全文複製成功！快貼到作業簿或記事本吧！", "success");
+            } catch (err) {
+                showToast("複製失敗，請手動框選文字複製", "error");
+            }
+            document.body.removeChild(textarea);
+        }
+
+        // Modal triggers
+        function openOverviewModal() {
+            document.getElementById("overview-modal").classList.remove("hidden");
+        }
+
+        function closeOverviewModal() {
+            document.getElementById("overview-modal").classList.add("hidden");
+        }
+    </script>
+</body>
+</html>
